@@ -224,23 +224,47 @@
   let i = 0;
 
   function showPhrase() {
-    // Colocamos el texto
+
     target.textContent = phrases[i];
 
-    // Reiniciamos animación para que se reproduzca en cada cambio
     target.classList.remove("dynamic-text");
-    void target.offsetWidth; // "truco" para reiniciar animación
+    void target.offsetWidth; 
     target.classList.add("dynamic-text");
 
-    // Pasar a la siguiente frase
     i = (i + 1) % phrases.length;
   }
 
   // Mostrar la primera frase de inmediato
   showPhrase();
 
-  // Cambiar frase cada 3 segundos (ajústalo si quieres más tiempo)
   setInterval(showPhrase, 3000);
+
+    /**
+   * Ocultar social-menu en móvil cuando el footer sea visible
+   */
+  const socialMenu = document.querySelector(".social-menu");
+  const footer = document.querySelector("footer");
+
+  if (socialMenu && footer) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && window.innerWidth <= 768) {
+            // En móvil y footer visible → ocultar
+            socialMenu.style.opacity = "0";
+            socialMenu.style.pointerEvents = "none";
+          } else {
+            // Caso contrario → mostrar
+            socialMenu.style.opacity = "1";
+            socialMenu.style.pointerEvents = "auto";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(footer);
+  }
 
   /**
    * Navmenu Scrollspy
