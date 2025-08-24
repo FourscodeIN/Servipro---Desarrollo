@@ -217,6 +217,17 @@ h6 {
   }
 }
 
+/*----------- Imagen Banner ----------- */
+/* 
+ @media (max-width: 768px) {
+  #banner .banner-image img {
+    width: 100%;
+    height: auto;       
+    max-height: 300px;   
+    object-fit: contain; 
+  }
+}  */
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -465,10 +476,22 @@ h6 {
     transition: color 0.3s;
   }
 
-  .mobile-nav-toggle:hover {
-    background-color: #555; 
-    color: var(--nav-color);
+  .mobile-nav-toggle.bi-list:hover {
+    color: #e5e7eb;   
+    transform: scale(1.2); 
+    transition: all 0.3s ease;
   }
+
+  .mobile-nav-toggle.bi-x:hover {
+    color: inherit;       
+    transform: none;      
+    cursor: pointer;       
+  }
+
+  .mobile-nav-toggle.bi-x {
+  background: none !important;
+  box-shadow: none !important;
+}
 
   .navmenu {
     padding: 0;
@@ -1075,13 +1098,13 @@ section,
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
 
-  .hero::before {
+    .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
