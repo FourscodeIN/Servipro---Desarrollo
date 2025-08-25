@@ -722,9 +722,10 @@ h6 {
 
 .footer-nav {
   display: flex;
-  flex-wrap: nowrap;   
-  gap: 10px;          
-  -webkit-overflow-scrolling: touch; 
+  flex-wrap: wrap;   
+  gap: 10px;
+  justify-content: center; /* opcional: centrado bonito */          
+  /* -webkit-overflow-scrolling: touch;  */
 }
 
 @media (max-width: 576px) {
