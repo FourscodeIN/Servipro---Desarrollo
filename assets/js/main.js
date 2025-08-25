@@ -212,7 +212,6 @@
     }
   });
 
-  // Frases que van rotando
   const phrases = [
     "Servicios técnicos",
     "Servicios TI",
@@ -224,6 +223,7 @@
   let i = 0;
 
   function showPhrase() {
+    if (!target) return; 
 
     target.textContent = phrases[i];
 
@@ -234,10 +234,10 @@
     i = (i + 1) % phrases.length;
   }
 
-  // Mostrar la primera frase de inmediato
-  showPhrase();
-
-  setInterval(showPhrase, 3000);
+  if (target) {
+    showPhrase(); 
+    setInterval(showPhrase, 3000);
+  }
 
     /**
    * Ocultar social-menu en móvil cuando el footer sea visible

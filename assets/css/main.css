@@ -353,15 +353,16 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 15px;
     font-family: var(--nav-font);
+    font-size: 0.95rem;
     font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
-    transition: 0.3s;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    padding: 10px 20px;
   }
 
   .navmenu a i,
@@ -503,7 +504,7 @@ h6 {
     list-style: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+    padding: 10px 20px;
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
@@ -711,10 +712,26 @@ h6 {
   color: #fff; 
   text-decoration: none;
   transition: color 0.3s ease;
+  white-space: nowrap; 
+  font-size: 14px;     
 }
 
 .footer-nav a:hover {
   color: var(--accent-color); 
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: nowrap;   
+  gap: 10px;          
+  -webkit-overflow-scrolling: touch; 
+}
+
+@media (max-width: 576px) {
+  .footer-nav a {
+    font-size: 12px;   /* aún más pequeño en pantallas muy chicas */
+    gap: 5px;           /* espacio entre enlaces */
+  }
 }
 
 .footer h4 {
@@ -1947,6 +1964,15 @@ section,
   cursor: pointer;
   display: flex;
   align-items: center;
+}
+
+.faq-banner {
+  max-width: 1200px;     /* ancho máximo del banner */
+  width: 100%;          /* siempre responsivo */
+  max-height: 400px;    /* altura controlada */
+  object-fit: cover;    /* evita deformación */
+  border-radius: 12px;  /* opcional: bordes suaves */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* sombra elegante */
 }
 
 .faq .faq-container .faq-item h3 .num {
