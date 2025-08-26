@@ -52,14 +52,14 @@
 
 /* Chrome, Edge, Safari */
 ::selection {
-  background: #132C63;
-  color: #fff;
+  background: #0D204A;
+  color: #E6E6E6;
 }
 
 /* Firefox */
 ::-moz-selection {
-  background: #132C63;
-  color: #fff;
+  background: #0D204A;
+  color: #E6E6E6;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -812,11 +812,11 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+/* Preloader general */
 #preloader {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  overflow: hidden;
   background-color: var(--background-color);
   transition: all 0.6s ease-out;
   width: 100%;
@@ -826,65 +826,112 @@ h6 {
   justify-content: center;
 }
 
-#preloader div {
+/* Contenedor de los dots */
+.preloader-dots {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dots */
+.preloader-dots div {
   width: 13px;
   height: 13px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
   position: absolute;
-  left: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
-#preloader div:nth-child(1) {
-  left: calc(50% + 8px);
+/* Posiciones relativas al centro */
+.preloader-dots div:nth-child(1) {
+  left: 0;
   animation: animate-preloader-1 0.6s infinite;
 }
 
-#preloader div:nth-child(2) {
-  left: calc(50% + 8px);
+.preloader-dots div:nth-child(2) {
+  left: 0;
   animation: animate-preloader-2 0.6s infinite;
 }
 
-#preloader div:nth-child(3) {
-  left: calc(50% + 32px);
+.preloader-dots div:nth-child(3) {
+  left: 24px;
   animation: animate-preloader-2 0.6s infinite;
 }
 
-#preloader div:nth-child(4) {
-  left: calc(50% + 56px);
+.preloader-dots div:nth-child(4) {
+  left: 48px;
   animation: animate-preloader-3 0.6s infinite;
 }
 
+/* Animaciones */
 @keyframes animate-preloader-1 {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
 }
 
 @keyframes animate-preloader-3 {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0);
-  }
+  0% { transform: scale(1); }
+  100% { transform: scale(0); }
 }
 
 @keyframes animate-preloader-2 {
-  0% {
-    transform: translate(0, 0);
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(24px, 0); }
+}
+
+ /* Preloader general */
+  /* #preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease-out;
   }
 
-  100% {
-    transform: translate(24px, 0);
+  .preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
-}
+
+  .preloader-logo {
+    max-width: 120px;
+    height: auto;
+    animation: fadeInOut 2s infinite;
+  }
+
+  .loader {
+    display: flex;
+    gap: 10px;
+  }
+
+  .loader div {
+    width: 13px;
+    height: 13px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+  }
+
+  .loader div:nth-child(2) { animation-delay: 0.2s; }
+  .loader div:nth-child(3) { animation-delay: 0.4s; }
+  .loader div:nth-child(4) { animation-delay: 0.6s; }
+
+  @keyframes bounce {
+    from { transform: translateY(0); opacity: 0.6; }
+    to { transform: translateY(-10px); opacity: 1; }
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  } */
 
 /*--------------------------------------------------------------
 # Scroll Top Button
@@ -897,8 +944,8 @@ h6 {
   bottom: 15px;
   z-index: 99999;
   background-color: var(--accent-color);
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
   border-radius: 4px;
   transition: all 0.4s;
 }
@@ -922,11 +969,89 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
+
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
 }
+
+/*--------------------------------------------------------------
+# Terminos y condiciones section
+--------------------------------------------------------------*/
+  .terms-section {
+  padding: 50px 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #eaeaea; /* Texto claro para contraste en fondo oscuro */
+  line-height: 1.7;
+}
+
+.terms-section .container {
+  max-width: 900px;
+  margin: auto;
+  background: #252525; /* gris oscuro */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.6);
+}
+
+.terms-section h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffffff; /* título principal en blanco */
+}
+
+.terms-section .update-date {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #bbbbbb; /* gris claro */
+  margin-bottom: 30px;
+}
+
+.terms-section h2 {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #f0f0f0; /* subtítulos claros */
+  border-left: 4px solid #0073e6; /* línea azul legal */
+  padding-left: 10px;
+}
+
+.terms-section p {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  color: #dddddd; /* gris suave para lectura */
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.terms-section li {
+  margin-bottom: 8px;
+  color: #cccccc;
+}
+
+.terms-section .legal-box {
+  background: #333; /* caja oscura */
+  border: 1px solid #0073e6; /* borde azul para resaltar */
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.terms-section .highlight {
+  font-weight: 600;
+  color: #4da3ff; /* azul claro */
+}
+
+/* .terms-section a {
+  color: #4da3ff; 
+  text-decoration: underline;
+} */
 
 /*--------------------------------------------------------------
 # Global Page Titles & Breadcrumbs
