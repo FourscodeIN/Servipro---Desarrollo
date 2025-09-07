@@ -31,7 +31,7 @@
   --surface-color: #09100F;
   /* --contrast-color: #ffffff; Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
   --contrast-color: #09100F;
-  --green-new: #5EA191;
+  --contrastnew-color: #D7D7D7;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -184,7 +184,7 @@ h6 {
 /* Estilo de los íconos */
 .social-menu a {
   background: #fff;
-  border: 2px solid #1a1a1a;
+  /* border: 1px solid #1a1a1a; */
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -979,7 +979,7 @@ h6 {
 /*--------------------------------------------------------------
 # Terminos y condiciones section
 --------------------------------------------------------------*/
-  .terms-section {
+.terms-section {
   padding: 50px 20px;
   font-family: "Segoe UI", Arial, sans-serif;
   color: #eaeaea; /* Texto claro para contraste en fondo oscuro */
@@ -1157,6 +1157,10 @@ section,
   align-items: center;
   background: url("../img/ricoh-3.webp") center 71% / cover no-repeat; /*top left*/
   background-size: cover;
+}
+
+#principal .btn-get-started:hover {
+  background: var(--contrastnew-color);
 }
 
 .hero:before {
@@ -1417,8 +1421,297 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Botón servicios
+--------------------------------------------------------------*/
+
+#btn-solicitar-info {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#btn-solicitar-info:hover {
+  background: var(--contrastnew-color);
+  /* transform: translateY(-2px); */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  color: var(--background-color);
+}
+
+.contenido-detalle li {
+  position: relative;
+  list-style: none; /* quita la viñeta por defecto */
+  padding-left: 1.5em; /* espacio para la flecha */
+}
+
+.contenido-detalle li::before {
+  content: "✓";  
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Sección descripción
+--------------------------------------------------------------*/
+
+.descrip-productos {
+  background: var(--contrastnew-color);
+  color: var(--background-color);
+  padding: 50px 0;
+}
+
+.descrip-productos h2 {
+  color: var(--background-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.header-coti{
+  /* background: var(--contrastnew-color); */
+  background: #ADADAD;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 15px 0;
+}
+
+#header2 {
+  position: relative;
+  z-index: 1030;  /* más alto */
+}
+
+/* Header Cotización */
+#header-coti {
+  /* position: relative; */
+  z-index: 1000;  /* más bajo */
+}
+
+.header-coti .titulo-coti {
+  color: var(--background-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.img-producto {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centrada en móviles */
+}
+
+.descrip-productos img {
+  max-width: 450px;   /* límite de ancho como Ricoh */
+  height: auto;       /* mantiene la proporción */
+  display: block;     /* asegura que se comporte como bloque */
+  margin: 0 auto 20px auto; /* centra la imagen con margen abajo */
+}
+
+.header-coti .btn-coti {
+  background: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap; /* evita que el texto se rompa en dos líneas */
+}
+
+/* Estilo para desktop */
+@media (min-width: 992px) {
+  .header-coti .btn-coti {
+    padding: 12px 28px;  /* más grande */
+    font-size: 1.1rem;   /* aumenta un poco el texto */
+  }
+}
+
+.header-coti .btn-coti:hover {
+  background: var(--background-color);
+}
+
+.descrip-productos ul li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.descrip-productos ul {
+  list-style: none;   /* Quita los puntos */
+  padding-left: 0;    /* Elimina la sangría */
+  margin: 0;          /* Opcional, limpia márgenes */
+}
+
+#fotocopiadora ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Redes sociales descripción
+--------------------------------------------------------------*/
+
+/* Menú lateral fijo (desktop) */
+.social-menu2 {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+/* Estilo de los íconos */
+.social-menu2 a {
+  background: var(--background-color);
+  /* border: 2px solid #1a1a1a; */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Hover con color */
+.social-menu2 a:hover {
+  background: #fff;
+  color: var(--background-color);
+  transform: scale(1.1);
+}
+
+/* ✅ Responsive: en móvil la barra pasa abajo en horizontal */
+@media (max-width: 768px) {
+  .social-menu2 {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row; /* en fila */
+    gap: 20px;
+    right: auto;
+    top: auto;
+  }
+
+  .social-menu2 a {
+    background: var(--background-color);
+    color: #FFF;
+  }
+
+  .social-menu2 a:hover {
+    background: #fff;
+    color: var(--background-color);
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Tabla descripción
+--------------------------------------------------------------*/
+
+.tabla-detalle table {
+  background: var(--contrastnew-color);
+  color: #fff; /* opcional para contraste */
+}
+
+/* Tabs estilo Ricoh */
+.custom-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--background-color);
+  font-weight: 500;
+  margin-right: 20px;
+  padding: 10px 0;
+}
+
+.custom-tabs .nav-link.active {
+  color: #000;
+  border-bottom: 2px solid var(--accent-color); 
+  background: none;
+}
+
+/* Tabla estilo ficha técnica */
+.custom-table th {
+  width: 35%;
+  background-color: var(--contrastnew-color);
+  font-weight: 600;
+  color: var(--background-color);
+}
+
+.custom-table td {
+  background: var(--contrastnew-color);
+  color: var(--background-color);
+}
+
+#servicio h5 {
+  color: var(--background-color);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#servicio ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+}
+
+#servicio ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Texto dinámico
+--------------------------------------------------------------*/
+
+.dynamic-text {
+  display: inline-block;
+  font-weight: bold;
+  color: var(--accent-color, #58a6ff);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: slideUp 1s ease forwards;
+}
+
+@media (max-width: 640px) {
+  .dynamic-text {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
 .about .about-content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -1433,6 +1726,7 @@ section,
   display: flex;
   align-items: flex-start;
   margin-bottom: 35px;
+  transition: all 0.3s ease;
 }
 
 .about .about-content ul li:first-child {
@@ -1489,94 +1783,23 @@ section,
   transition: color 0.3s ease;
 }
 
-/* 🔥 Hover */
-.about .about-content ul li:hover h4,
-.about .about-content ul li:hover p {
+.about .about-content ul li a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-decoration: none; /* elimina subrayado */
+  color: inherit;        /* hereda colores actuales */
+  width: 100%;           /* clickeable todo el bloque */
+}
+
+.about .about-content ul li a:hover h4,
+.about .about-content ul li a:hover p {
   color: var(--accent-color);
 }
 
-.about .about-content ul li:hover i {
+.about .about-content ul li a:hover i {
   transform: translateY(-5px);
   color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Skills Section
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
-.stats i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  border: 6px solid var(--surface-color);
-  width: 64px;
-  height: 64px;
-  font-size: 24px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.stats .stats-item {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  margin-top: -32px;
-  padding: 40px 30px 35px 30px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  border-radius: 4px;
-  z-index: 0;
-}
-
-.stats .stats-item span {
-  font-size: 36px;
-  display: block;
-  font-weight: 700;
-}
-
-.stats .stats-item p {
-  padding: 0;
-  margin: 0;
-  font-family: var(--heading-font);
-  font-size: 16px;
 }
 
 /*--------------------------------------------------------------
@@ -1600,6 +1823,32 @@ section,
 
 .clients .swiper-slide img:hover {
   transform: scale(1.1);
+}
+
+/* Contenedor de la paginación */
+.swiper-pagination {
+  position: relative;
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* Estilo base de los bullets: rectángulos finos */
+.swiper-pagination-bullet {
+  width: 30px;               /* largo de la barra */
+  height: 6px;               /* grosor */
+  border-radius: 10px;       /* esquinas redondeadas */
+  background: #ccc;          /* color inactivo */
+  opacity: 0.5;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+/* Bullet activo (premium look) */
+.swiper-pagination-bullet-active {
+  background: var(--accent-color); /* color corporativo ServiPro */
+  opacity: 1;
+  width: 40px;              /* un poquito más largo */
+  box-shadow: 0 0 8px rgba(0,0,0,0.2); /* leve brillo elegante */
 }
 
 /*--------------------------------------------------------------
@@ -1652,127 +1901,6 @@ section,
 
 .services .service-item:hover h3 {
   color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials {
-  padding: 80px 0;
-  position: relative;
-}
-
-.testimonials:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.testimonials .testimonials-bg {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.testimonials .container {
-  position: relative;
-  z-index: 3;
-}
-
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item {
-  text-align: center;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 100px;
-  border-radius: 50%;
-  border: 6px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  margin: 0 0 15px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.testimonials .testimonial-item .stars {
-  margin-bottom: 15px;
-}
-
-.testimonials .testimonial-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 auto 15px auto;
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 50%);
-  opacity: 0.5;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--default-color);
-  opacity: 1;
-}
-
-@media (min-width: 992px) {
-  .testimonials .testimonial-item p {
-    width: 80%;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -1877,194 +2005,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
-.team .team-member {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  border-radius: 5px;
-}
-
-.team .team-member .member-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.team .team-member .social {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 40px;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a {
-  transition: color 0.3s;
-  color: var(--heading-color);
-  margin: 0 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.team .team-member .social a i {
-  line-height: 0;
-}
-
-.team .team-member .social a:hover {
-  color: var(--accent-color);
-}
-
-.team .team-member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
-.team .team-member .member-info {
-  padding: 25px 15px;
-  text-align: center;
-}
-
-.team .team-member .member-info h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.team .team-member .member-info span {
-  display: block;
-  font-size: 13px;
-  font-weight: 400;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.team .team-member .member-info p {
-  font-style: italic;
-  font-size: 14px;
-  line-height: 26px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-}
-
-.team .team-member:hover .social {
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
-# Pricing Section
---------------------------------------------------------------*/
-.pricing .pricing-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
-
-.pricing .pricing-item h3 {
-  font-weight: 400;
-  margin: -20px -20px 20px -20px;
-  padding: 20px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
-}
-
-.pricing .pricing-item h4 {
-  font-size: 36px;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.pricing .pricing-item h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing .pricing-item h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing .pricing-item ul {
-  padding: 15px 0;
-  list-style: none;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing .pricing-item ul li {
-  padding-bottom: 16px;
-}
-
-.pricing .pricing-item ul i {
-  color: var(--accent-color);
-  font-size: 18px;
-  padding-right: 4px;
-}
-
-.pricing .pricing-item ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  text-decoration: line-through;
-}
-
-.pricing .btn-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 95%);
-  margin: 0 -20px -20px -20px;
-  padding: 20px 15px;
-  text-align: center;
-}
-
-.pricing .btn-buy {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: var(--heading-font);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.pricing .btn-buy:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.pricing .featured h3 {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.pricing .advanced {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-}
-
-/*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
 .faq .faq-container .faq-item {
@@ -2093,9 +2033,9 @@ section,
 }
 
 .faq-banner {
-  max-width: 1200px;     /* ancho máximo del banner */
+  max-width: 1366px;     /* ancho máximo del banner */
   width: 100%;          /* siempre responsivo */
-  max-height: 400px;    /* altura controlada */
+  max-height: 500px;    /* altura controlada */
   object-fit: cover;    /* evita deformación */
   border-radius: 12px;  /* opcional: bordes suaves */
   box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* sombra elegante */
@@ -2162,6 +2102,219 @@ section,
   transform: rotate(90deg);
   color: var(--accent-color);
 }
+
+.banner-textbox {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: 350px;
+  border-radius: 12px;
+  opacity: 0.9;
+  text-align: left;
+}
+
+/* En móviles, que se salga del overlay y baje centrado */
+@media (max-width: 768px) {
+  .banner-textbox {
+    position: static;       /* deja de estar dentro del banner */
+    margin: 20px auto 0;    /* lo centra debajo */
+    max-width: 90%;         /* más ancho en móviles */
+    text-align: center;     /* centramos el texto */
+  }
+}
+
+/*--------------------------------------------------------------
+# Sección Licencias
+--------------------------------------------------------------*/
+#servipro-products {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Grid */
+#servipro-products .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Escritorio: 3 por fila */
+  gap: 25px;
+}
+
+/* Tablets (máx 992px) → 2 por fila */
+@media (max-width: 992px) {
+  #servipro-products .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celulares (máx 576px) → 1 por fila */
+@media (max-width: 576px) {
+  #servipro-products .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card completa como link */
+#servipro-products .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #111; /* Fondo oscuro elegante */
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+#servipro-products .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Imagen */
+#servipro-products .product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Título */
+#servipro-products .product-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--default-color);
+  /*color: #3DED9B;  Verde corporativo */
+}
+
+#servipro-products .btn-servipro {
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 700;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 1rem;         /* antes era ~0.875rem */
+  padding: 0.85rem 1.6rem; /* más alto y ancho */
+  min-width: 180px;        /* ancho mínimo uniforme */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#servipro-products .btn-servipro:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Precio */
+#servipro-products .product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00E2AA; /* Azul claro */
+  margin-bottom: 15px;
+}
+
+.btn-servipro:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Versión WhatsApp */
+.btn-wa {
+  border-color: #25D366;
+  color: #25D366;
+}
+.btn-wa:hover {
+  background: #25D366;
+  color: #fff;
+}
+
+/*         SERVIPRO MODAL        */
+/* ============================= */
+
+/* Imagen dentro de la modal */
+#servipro-modal .modal-body img {
+  width: 250px;       /* Tamaño fijo, ajustable a tu preferencia */
+  max-width: 80%;     /* No excede el ancho del modal */
+  height: auto;       /* Mantiene proporción */
+  display: block;
+  margin: 0 auto 20px auto; /* Centrada y separada del texto */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  object-fit: contain;
+}
+
+#servipro-modal {
+  border-radius: 15px;
+  overflow: hidden;
+  /* border: 3px solid #5C00E9; */
+  border: 3px solid var(--accent-color);
+}
+
+#servipro-modal .modal-header {
+  background: linear-gradient(90deg, var(--accent-color), #00E2AA);
+  color: #fff;
+  border-bottom: none;
+}
+
+#servipro-modal .modal-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+#servipro-modal .modal-body {
+  padding: 25px;
+  font-size: 1rem;
+  background: var(--contrastnew-color);
+  color: var(--background-color);
+}
+
+/*--------------------------------------------------------------
+# Stats Section
+--------------------------------------------------------------*/
+.stats i {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: 6px solid var(--surface-color);
+  width: 64px;
+  height: 64px;
+  font-size: 24px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stats .stats-item {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
+  margin-top: -32px;
+  padding: 40px 30px 35px 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 0;
+}
+
+.stats .stats-item span {
+  font-size: 36px;
+  display: block;
+  font-weight: 700;
+}
+
+.stats .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-family: var(--heading-font);
+  font-size: 16px;
+}
+
 
 /*--------------------------------------------------------------
 # Contact Section
@@ -2265,69 +2418,79 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Service Details Section
+# Impresoras funcionales
 --------------------------------------------------------------*/
-.service-details .services-list {
-  background-color: var(--surface-color);
-  padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  margin-bottom: 20px;
-}
 
-.service-details .services-list a {
-  display: block;
-  line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  transition: 0.3s;
-}
-
-.service-details .services-list a.active {
-  color: var(--heading-color);
-  font-weight: 700;
-  border-color: var(--accent-color);
-}
-
-.service-details .services-list a:hover {
-  border-color: var(--accent-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details h4 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
+#impresoras .product-card {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0d1117; /* un negro más puro */
+  border: 1px solid #222;
+  border-radius: 14px;
+  overflow: hidden; /* asegura que nada se desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
+#impresoras .product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 18px var(--contrastnew-color);
+}
+
+ /* Imagen dentro de cards */
+#impresoras .product-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #111;
+  border-bottom: 1px solid #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  max-height: 220px;   /* controla altura máxima uniforme */
+}
+
+/* Botón */
+#impresoras .btn-servipro {
+  border: 2px solid var(--accent-color);
   color: var(--accent-color);
+  font-weight: 700;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 1rem;         /* antes era ~0.875rem */
+  padding: 0.85rem 1.6rem; /* más alto y ancho */
+  min-width: 180px;        /* ancho mínimo uniforme */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#impresoras .btn-servipro:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Cuerpo de la tarjeta */
+#impresoras .card-body {
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#impresoras .card-body h5 {
+  color: var(--default-color);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+#impresoras .card-body p {
+  color: #bbb;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1;
 }
 
 /*--------------------------------------------------------------

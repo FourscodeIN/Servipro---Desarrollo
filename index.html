@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Servipro - Desarrollo</title>
+  <title>Servipro Servicios Profesionales</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
-  <base href="https://fourscodein.github.io/Servipro---Desarrollo/">
+  <!-- <base href="https://fourscodein.github.io/Servipro---Desarrollo/"> -->
 
   <!-- Favicons -->
   <link href="assets/img/favicon.svg" rel="icon">
@@ -27,37 +27,11 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <!-- <link href="assets/css/main.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="assets/css/main.min.css?v=20250903">
 
   <!-- iconos RDS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    .dynamic-text {
-      display: inline-block;
-      font-weight: bold;
-      color: var(--accent-color, #58a6ff);
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 56px;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: slideUp 1s ease forwards;
-    }
-
-    @media (max-width: 640px) {
-      .dynamic-text {
-        font-size: 28px;
-        line-height: 36px;
-      }
-    }
-
-    @keyframes slideUp {
-      0%   { transform: translateY(100%); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-  </style>
-
 </head>
 
 <body class="index-page">
@@ -65,26 +39,32 @@
   <!-- Header principal -->
   <header id="header" class="header sticky-top">
 
-      <div class="branding d-flex align-items-cente">
+    <div class="branding d-flex align-items-cente">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
 
-        <a href="index.html" class="logo d-flex align-items-center">
-          <img src="assets/img/servipronew2.webp" alt="Logo ServiPro">
+        <a href="/index.html" class="logo d-flex align-items-center">
+          <img src="/assets/img/servipronew2.webp" alt="Logo ServiPro">
         </a>
 
         <nav id="navmenu" class="navmenu" role="navigation" aria-label="Menú principal">
           <ul>
-            <li><a href="#hero" class="active">Inicio</a></li>
-            <li><a href="#about">Sobre nosotros</a></li>
-            <li><a href="#services">Servicios</a></li>
+            <li><a href="/#hero" class="active">Inicio</a></li>
+            <li><a href="/#about">Sobre nosotros</a></li>
+            <li class="dropdown">
+              <a href="#servicess">Servicios <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="/Servicios/service_sistemas.html">Soporte técnico en sistemas</a></li>
+                <li><a href="/Servicios/service_maquinas.html">Servicio técnico en fotocopiadoras</a></li>
+              </ul>
+            </li>
             <li class="dropdown">
               <a href="#productos">Productos y software <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="#impresoras-multifuncionales">Impresoras multifuncionales</a></li>
+                <li><a href="/Productos/module-multifuncionales.html">Impresoras multifuncionales</a></li>
                 <li><a href="#impresoras-industriales">Impresoras Industriales</a></li>
                 <li><a href="#repuestos-insumos">Repuestos e insumos</a></li>
-                <li><a href="#software-aplicaciones">Software y aplicaciones</a></li>
+                <li><a href="/Productos/module-licencias.html">Licencias y software</a></li>
               </ul>
             </li>
           </ul>
@@ -93,7 +73,7 @@
 
       </div>
 
-      </div>
+    </div>
 
   </header>
 
@@ -122,8 +102,8 @@
               <span id="dynamic-text" class="dynamic-text"></span>
             </h2>
 
-            <div class="d-flex gap-3">
-              <a href="#about" class="btn-get-started">Descubre más</a>
+            <div id="principal" class="d-flex gap-3">
+              <a href="/#about" class="btn-get-started">Descubre más</a>
               <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center">
               <i class="bi bi-play-circle"></i><span>Ver vídeo</span>
               </a>
@@ -150,8 +130,8 @@
           <!-- Imagen -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="d-flex flex-column gap-3">
-              <img src="assets/img/ricoh-2.webp" alt="Equipos Ricoh" class="img-fluid rounded shadow-sm">
-              <img src="assets/img/maxresdefault.webp" alt="Equipos Ricoh" class="img-fluid rounded shadow-sm">
+              <img src="/assets/img/ricoh-2.webp" alt="Equipos Ricoh" loading="lazy" class="img-fluid rounded shadow-sm">
+              <img src="/assets/img/maxresdefault.webp" alt="Equipos Ricoh" loading="lazy" class="img-fluid rounded shadow-sm">
             </div>
           </div>
 
@@ -167,53 +147,55 @@
 
               <ul>
                 <li>
-                  <i class="bi bi-gear"></i>
-                  <div>
-                    <h4>Venta y suministro de insumos</h4>
-                    <p>Fotocopiadoras e Impresoras Ricoh, tóner, repuestos y consumibles originales para mantener la calidad y durabilidad de sus equipos.</p>
-                  </div>
+                  <a href="/index.html">
+                    <i class="bi bi-gear"></i>
+                    <div>
+                      <h4>Venta y suministro de insumos</h4>
+                      <p>Fotocopiadoras e Impresoras Ricoh, tóner, repuestos y consumibles originales para mantener la calidad y durabilidad de sus equipos.</p>
+                    </div>
+                  </a>
                 </li>
 
                 <li>
-                  <i class="bi bi-printer"></i>
-                  <div>
-                    <h4>Máquinas y manufactura</h4>
-                    <p>Equipos multifuncionales, impresoras y soluciones de manufacturación adaptadas a las necesidades de su negocio.</p>
-                  </div>
+                  <a href="/Productos/module-multifuncionales.html">
+                    <i class="bi bi-printer"></i>
+                    <div>
+                      <h4>Máquinas y manufactura</h4>
+                      <p>Equipos multifuncionales, impresoras y soluciones de manufacturación adaptadas a las necesidades de su negocio.</p>
+                    </div>
+                  </a>
                 </li>
 
                 <li>
-                  <i class="bi bi-tools"></i>
-                  <div>
-                    <h4>Servicio técnico y mantenimiento</h4>
-                    <p>Soporte preventivo y correctivo con técnicos especializados en sistemas y fotocopiadoras multifuncionales.</p>
-                  </div>
+                  <a href="/Servicios/service_maquinas.html">
+                    <i class="bi bi-tools"></i>
+                    <div>
+                      <h4>Servicio técnico y mantenimiento</h4>
+                      <p>Soporte preventivo y correctivo con técnicos especializados en sistemas y fotocopiadoras multifuncionales.</p>
+                    </div>
+                  </a>
                 </li>
 
-                  <li>
+                <li>
+                  <a href="/Servicios/service_sistemas.html">
                     <i class="bi bi-laptop"></i>
                     <div>
                       <h4>Soporte en computadores y sistemas</h4>
                       <p>Diagnóstico, reparación, optimización de rendimiento y configuración de hardware y software.</p>
                     </div>
-                  </li>
+                  </a>
+                </li>
 
-                    <li>
-                      <i class="bi bi-windows"></i>
-                      <div>
-                        <h4>Licencias Microsoft</h4>
-                        <p>Venta de licencias originales de Windows y Office con instalación y soporte técnico garantizado.</p>
-                      </div>
-                    </li>
-                  </ul>
-                  <!-- <li>
-                    <i class="bi bi-code-slash"></i>
+                <li>
+                  <a href="/Productos/module-licencias.html">
+                    <i class="bi bi-windows"></i>
                     <div>
-                      <h4>Soluciones de software</h4>
-                      <p>Programas de gestión documental y control de impresión para optimizar procesos empresariales.</p>
+                      <h4>Licencias Microsoft</h4>
+                      <p>Venta de licencias originales de Windows y Office con instalación y soporte técnico garantizado.</p>
                     </div>
-                  </li>
-                </ul> -->
+                  </a>
+                </li>
+              </ul>
 
               <p>
                 Con años de experiencia en el mercado, en <strong>ServiPro</strong> trabajamos con profesionalismo y compromiso 
@@ -247,6 +229,7 @@
             <div class="ratio ratio-16x9 rounded shadow-sm">
               <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" 
                       title="Video de presentación ServiPro" 
+                      loading="lazy"
                       allowfullscreen></iframe>
             </div>
           </div>
@@ -319,7 +302,6 @@
     <!-- Sección servicios -->
     <section id="services" class="featured-services section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>¿Qué ofrecemos?</h2>
         <p><span>Estos son los </span> <span class="description-title">Servicios</span> <span> que ofrecemos</span></p>
@@ -332,15 +314,21 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="service-image">
-                <img src="assets/img/services/pc3.webp" alt="Servicio técnico sistemas">
+                <img  src="/assets/img/services/pc3.webp" alt="Servicio técnico sistemas" loading="lazy">
               </div>
-              <h4><a  class="stretched-link">Sistemas | Soporte Técnico</a></h4>
+              <h4><a href="/Servicios/service_sistemas.html" class="stretched-link">Sistemas | Soporte Técnico</a></h4>
               <p>
                 Diagnóstico, reparación, optimización de rendimiento y configuración de hardware y software para tus equipos de computo con atención inmediata de técnicos especializados.
               </p>
-
+              
+              <!-- <div class="service-btn">
+                <button type="button" class="btn btn-get-started"
+                        onclick="window.location.href='Servicios/service_sistemas.html'">
+                  Solicitar información
+                </button>
+              </div> -->
               <div class="service-btn">
-                <button type="button" class="btn btn-get-started">Solicitar información</button>
+                <a href="/Servicios/service_sistemas.html" class="btn btn-get-started">Solicitar información</a>
               </div>
             </div>
           </div>
@@ -348,13 +336,19 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="service-image">
-                <img src="assets/img/services/ricoh-5.webp" alt="Servicio técnico fotocopiadoras">
+                <img src="/assets/img/services/ricoh-5.webp" alt="Servicio técnico fotocopiadoras" loading="lazy">
               </div>
-              <h4><a class="stretched-link">Máquinas | Servicio Técnico</a></h4>
+              <h4><a href="/Servicios/service_maquinas.html" class="stretched-link">Máquinas | Servicio Técnico</a></h4>
               <p>Mantenimiento y reparación de impresoras y fotocopiadoras de la marca Ricoh, garantizamos atención inmediata con técnicos especializados en sitio, minimizando el tiempo de inactividad.</p>
 
+              <!-- <div class="service-btn">
+                <button type="button" class="btn btn-get-started"
+                        onclick="window.location.href='Servicios/service_maquinas.html'">
+                  Solicitar información
+                </button>
+              </div> -->
               <div class="service-btn">
-                <button type="button" class="btn btn-get-started">Solicitar información</button>
+                <a href="/Servicios/service_maquinas.html" class="btn btn-get-started">Solicitar información</a>
               </div>
             </div>
           </div>
@@ -362,13 +356,13 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative">
               <div class="service-image">
-                <img src="assets/img/services/win.webp" alt="Licencias">
+                <img src="/assets/img/services/win.webp" alt="Licencias"  loading="lazy">
               </div>
-              <h4><a class="stretched-link">Licencias Windows y Office</a></h4>
+              <h4><a href="/Productos/module-licencias.html" class="stretched-link">Licencias Windows y Office</a></h4>
               <p>Ofrecemos todo tipo de licencias originales de Windows y Office al mejor precio.</p>
 
               <div class="service-btn">
-                <button type="button" class="btn btn-get-started">Solicitar información</button>
+                <a href="/Productos/module-licencias.html" class="btn btn-get-started">Solicitar información</a>
               </div>
             </div>
           </div>
@@ -380,7 +374,8 @@
                   En <strong>ServiPro</strong> te ofrecemos fotocopiadoras Ricoh multifuncionales de alta calidad, impresoras, repuestos e insumos. Soluciones confiables y accesibles que impulsan la productividad de tu negocio.
                 </p>
                 <div class="cont-btn ms-auto">
-                  <button type="button" class="btn btn-light px-4 py-2 fw-bold d-flex align-items-center gap-2">
+                  <button type="button" class="btn btn-light px-4 py-2 fw-bold d-flex align-items-center gap-2"
+                          onclick="safeRedirect('/Productos/module-multifuncionales.html')">
                     Ver productos <i class="bi bi-arrow-up-right"></i>
                   </button>
                 </div>
@@ -390,428 +385,19 @@
 
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section> -->
-
-    <!-- Portfolio Section -->
-    <!-- <section id="portfolio" class="portfolio section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p><span>Check Our&nbsp;</span> <span class="description-title">Portfolio</span></p>
-      </div>
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
-          </ul>
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-
-    <!-- Team Section -->
-    <!-- <section id="team" class="team section"> 
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p><span>Our Hardworking</span> <span class="description-title">Team</span></p>
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-
-    <!-- Pricing Section -->
-    <!--<section id="pricing" class="pricing section">
-
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p><span>Check our</span> <span class="description-title">Pricing</span></p>
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-3">
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-item featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="pricing-item">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="pricing-item">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section> -->
-
     <!-- Sección Banner -->
     <section id="banner" class="banner section">
       <div class="container">
         <div class="banner-image text-center">
-          <a href="index.html">
-            <img src="assets/img/Banner-SV.webp" alt="Banner ServiPro" class="img-fluid rounded shadow-sm">
+          <a href="/index.html">
+            <img src="/assets/img/Banner-SV.webp" alt="Banner ServiPro" loading="lazy" class="img-fluid rounded shadow-sm">
           </a>
         </div>
       </div>
     </section>
 
     <!-- Sección clientes -->
-    <section id="clients" class="clients section"> <!--light-background-->
+    <section id="clients" class="clients section">
 
       <div class="container">
 
@@ -849,16 +435,20 @@
               }
             }
           </script>
+
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-1.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-2.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-3.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-4.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-5.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-6.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-7.webp" class="img-fluid" alt="" loading="lazy"></div>
+            <div class="swiper-slide"><img src="/assets/img/clients/client-8.webp" class="img-fluid" alt="" loading="lazy"></div>
           </div>
+
+          <!-- 🔹 Puntos dinámicos -->
+          <div class="swiper-pagination"></div>
         </div>
 
       </div>
@@ -876,10 +466,10 @@
         <!--Enlaces de navegación-->
         <div class="col-md-6 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
           <ul class="list-inline mb-0 footer-nav">
-            <li class="list-inline-item"><a href="https://wa.me/573105443050">Contáctenos</a></li>
-            <li class="list-inline-item"><a href="Enlaces/module-faqs.html">Preguntas frecuentes</a></li>
-            <li class="list-inline-item"><a href="#services">Nuestros servicios</a></li>
-            <li class="list-inline-item"><a href="Enlaces/module-terms.html">Términos de uso</a></li>
+            <li class="list-inline-item"><a href="https://wa.me/573105443050" target="_blank">Contáctenos</a></li>
+            <li class="list-inline-item"><a href="/Enlaces/module-faqs.html">Preguntas frecuentes</a></li>
+            <li class="list-inline-item"><a href="/#services">Nuestros servicios</a></li>
+            <li class="list-inline-item"><a href="/Enlaces/module-terms.html">Términos de uso</a></li>
           </ul>
         </div>
 
@@ -939,18 +529,19 @@
   </div> -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- <script src="assets/js/main.js"></script> -->
+  <script src="assets/js/main.min.js?v=20250903" defer></script>
 
 </body>
 

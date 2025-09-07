@@ -15,13 +15,19 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+    
+    if (!selectHeader) return; // <-- seguridad
+
+    if (
+      !selectHeader.classList.contains('scroll-up-sticky') &&
+      !selectHeader.classList.contains('sticky-top') &&
+      !selectHeader.classList.contains('fixed-top')
+    ) return;
+
+    window.scrollY > 100
+      ? selectBody.classList.add('scrolled')
+      : selectBody.classList.remove('scrolled');
   }
-
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
-
   /**
    * Mobile nav toggle
    */
@@ -212,6 +218,33 @@
     }
   });
 
+  /**
+   * Navmenú
+   */
+  const navLinks = document.querySelectorAll(".navmenu a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const parentLi = link.parentElement;
+
+      // 🔹 Caso 1: dropdown (ej: Servicios)
+      if (parentLi.classList.contains("dropdown")) {
+        e.preventDefault(); // evita navegar al #servicess
+        // quitar inmediatamente cualquier "active"
+        link.classList.remove("active");
+        return;
+      }
+      
+      // 🔹 Caso 2: link normal
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    });
+  });
+
+    /**
+   * Texto dinámico inicio
+   */
+
   const phrases = [
     "Servicios técnicos",
     "Servicios TI",
@@ -242,30 +275,109 @@
     /**
    * Ocultar social-menu en móvil cuando el footer sea visible
    */
-  const socialMenu = document.querySelector(".social-menu");
+  // const socialMenu = document.querySelector(".social-menu");
+  // const footer = document.querySelector("footer");
+
+  // if (socialMenu && footer) {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach(entry => {
+  //         if (entry.isIntersecting && window.innerWidth <= 768) {
+  //           // En móvil y footer visible → ocultar
+  //           socialMenu.style.opacity = "0";
+  //           socialMenu.style.pointerEvents = "none";
+  //         } else {
+  //           // Caso contrario → mostrar
+  //           socialMenu.style.opacity = "1";
+  //           socialMenu.style.pointerEvents = "auto";
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 }
+  //   );
+
+  //   observer.observe(footer);
+  // }
+
+  const menus = Array.from(document.querySelectorAll(".social-menu, .social-menu2"));
   const footer = document.querySelector("footer");
 
-  if (socialMenu && footer) {
+  if (menus.length && footer) {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && window.innerWidth <= 768) {
-            // En móvil y footer visible → ocultar
-            socialMenu.style.opacity = "0";
-            socialMenu.style.pointerEvents = "none";
-          } else {
-            // Caso contrario → mostrar
-            socialMenu.style.opacity = "1";
-            socialMenu.style.pointerEvents = "auto";
-          }
+        const hide = entries[0].isIntersecting && window.innerWidth <= 768;
+        menus.forEach(menu => {
+          menu.style.opacity = hide ? "0" : "1";
+          menu.style.pointerEvents = hide ? "none" : "auto";
         });
       },
       { threshold: 0.1 }
     );
 
     observer.observe(footer);
+
+    // Asegura que al cambiar tamaño se aplique correctamente
+    window.addEventListener("resize", () => {
+      const hide = footer.getBoundingClientRect().top < window.innerHeight && window.innerWidth <= 768;
+      menus.forEach(menu => {
+        menu.style.opacity = hide ? "0" : "1";
+        menu.style.pointerEvents = hide ? "none" : "auto";
+      });
+    });
   }
 
+    /**
+   * Security Script
+   */
+  // ✅ Chequeo de rutas internas
+  function isInternal(path) {
+    return typeof path === "string" && (
+      path.startsWith("/") ||
+      path.startsWith("./") ||
+      path.startsWith("../") ||
+      path.startsWith("#") ||
+      path.startsWith("Servicios") ||
+      path.startsWith("Productos") ||
+      path.startsWith("Enlaces") ||
+      path.endsWith(".html") ||
+      path.includes(".html#")
+    );
+  }
+
+  // ✅ Hacer safeRedirect global
+  window.safeRedirect = function (path) {
+    if (isInternal(path)) {
+      window.location.assign(path);
+    } else {
+      console.warn("Intento de redirección bloqueado:", path);
+    }
+  };
+
+  // ✅ Dominios externos permitidos
+  const dominiosPermitidos = [
+    "https://wa.me",
+    "https://www.instagram.com",
+    "https://www.youtube.com",
+    // "https://facebook.com",
+    "https://www.linkedin.com",
+    "https://bootstrapmade.com"
+  ];
+
+  // ✅ Revisar todos los <a>
+  document.querySelectorAll("a").forEach(link => {
+    const url = link.getAttribute("href");
+
+    if (url) {
+      const esInterno = isInternal(url);
+      const esPermitido = dominiosPermitidos.some(dom => url.startsWith(dom));
+
+      if (!esInterno && !esPermitido) {
+        console.warn("⚠️ Enlace externo detectado y bloqueado:", url);
+        link.removeAttribute("href"); // bloquea el enlace
+      }
+    }
+  });
+    
   /**
    * Navmenu Scrollspy
    */
@@ -287,5 +399,26 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Datos dinámicos de la modal
+   */
+
+  const productCards = document.querySelectorAll("#servipro-products .product-card");
+
+  productCards.forEach(card => {
+    card.addEventListener("click", function(e) {
+      if (e.target.closest(".no-modal")) return;
+
+      const { title, desc, img } = card.dataset;
+
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalDesc").textContent  = desc;
+      document.getElementById("modalImg").src          = img;
+
+      const modal = new bootstrap.Modal(document.getElementById('productModal'));
+      modal.show();
+    });
+  });
 
 })();
