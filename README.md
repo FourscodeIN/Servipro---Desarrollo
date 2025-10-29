@@ -76,7 +76,7 @@ ServiPro/
 ├── assets/ # imagenes, css y js
 ├── forms/ # php
 ├── index.html
-└── README
+└── README.md
 ```
 
 ## Licencia
